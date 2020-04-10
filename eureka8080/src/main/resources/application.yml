@@ -9,7 +9,7 @@ eureka:
     fetch-registry: false # 指定当前主机是否需要从Eureka Server下载服务注册表
     service-url:
       # 当前Eureka Server对外暴露的服务器地址
-      defaultZone: http://${eureka.instance.hostname}:${server.port}
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
     # 关闭自我保护机制 不建议关闭 无法保证可用性 AP
     enable-self-preservation: false
@@ -17,3 +17,7 @@ eureka:
     eviction-interval-timer-in-ms: 4000
     # 指定自我保护机智的开启阈值
     # renewal-percent-threshold: 0.75
+
+spring:
+  application:
+    name: server-first
