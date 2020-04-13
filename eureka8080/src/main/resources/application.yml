@@ -17,7 +17,3 @@ eureka:
     eviction-interval-timer-in-ms: 4000
     # 指定自我保护机智的开启阈值
     # renewal-percent-threshold: 0.75
-
-spring:
-  application:
-    name: server-first
