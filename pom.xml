@@ -25,6 +25,7 @@
         <module>eureka8080</module>
         <module>provider8090</module>
         <module>consumer8100</module>
+        <module>gateway9000</module>
     </modules>
 
     <dependencies>
