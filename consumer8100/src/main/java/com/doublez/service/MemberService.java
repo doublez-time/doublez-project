@@ -2,9 +2,9 @@ package com.doublez.service;
 
 import com.doublez.entity.Member;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 // 关于Feign的说明：
 // 1)Feign接口名一般是与业务接口名相同的，但不是必须的
@@ -15,7 +15,7 @@ import java.util.List;
 //指定当前为Feign客户端，参数为提供者的微服务名称
 @FeignClient("doublez-provider-8090")
 @RequestMapping("/member")
-public interface DepartService {
+public interface MemberService {
     @PostMapping("/insert")
     String insert(Member member);
     @GetMapping("/query")
