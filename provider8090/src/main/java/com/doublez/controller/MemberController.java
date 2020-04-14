@@ -4,6 +4,7 @@ import com.doublez.entity.Member;
 import com.doublez.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @GetMapping("/insert")
+    @PostMapping("/insert")
 //    @HystrixCommand(fallbackMethod = "hiError")
     public String insert(Member member) {
         memberService.save(member);
