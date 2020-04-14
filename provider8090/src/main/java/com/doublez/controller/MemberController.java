@@ -3,25 +3,27 @@ package com.doublez.controller;
 import com.doublez.entity.Member;
 import com.doublez.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RequestMapping("/member")
 @RestController
 public class MemberController {
 
     @Autowired
     private MemberService memberService;
 
-    @RequestMapping("/insert")
+    @GetMapping("/insert")
 //    @HystrixCommand(fallbackMethod = "hiError")
     public String insert(Member member) {
         memberService.save(member);
         return "插入成功！";
     }
 
-    @RequestMapping("/query")
+    @GetMapping("/query")
     public String query() {
         String result = "";
         for (int i = 0; i < 2; i++) {
